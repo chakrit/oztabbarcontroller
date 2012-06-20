@@ -7,7 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface OZTabBarController : NSObject
+
+@interface OZTabBarController : UIViewController
+
+@property (nonatomic, strong, readonly) NSArray *viewControllers;
+@property (nonatomic, strong) IBOutlet UIView *viewContainer;
+
+@property (nonatomic, strong) UIViewController *selectedViewController;
+@property (nonatomic) NSUInteger selectedTabIndex;
+
+- (id)initWithViewControllers:(NSArray *)viewControllers;
+- (id)initWithNibName:(NSString *)nibNameOrNil
+               bundle:(NSBundle *)nibBundleOrNil
+      viewControllers:(NSArray *)viewControllers;
+
+- (IBAction)userDidTapTabButton:(id)sender;
+- (void)setActiveTab:(NSUInteger)tabIndex;
 
 @end
