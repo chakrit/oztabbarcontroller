@@ -13,7 +13,7 @@
 @interface OZTabBarController : UIViewController
 
 @property (nonatomic, strong, readonly) NSArray *viewControllers;
-@property (nonatomic, strong) IBOutlet UIView *viewContainer;
+@property (nonatomic, strong) IBOutlet UIView *childViewContainer;
 
 @property (nonatomic, strong) UIViewController *selectedViewController;
 @property (nonatomic) NSUInteger selectedTabIndex;

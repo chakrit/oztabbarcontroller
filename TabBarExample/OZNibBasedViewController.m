@@ -11,4 +11,6 @@
 
 @implementation OZNibBasedViewController
 
+- (NSString *)title { return @"Nib-based tabs example."; }
+
 @end

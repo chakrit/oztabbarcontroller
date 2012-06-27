@@ -19,6 +19,12 @@
 		2209B340159AFE730073E820 /* OZLoadViewBasedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2209B33F159AFE730073E820 /* OZLoadViewBasedViewController.m */; };
 		2209B343159AFE7E0073E820 /* OZChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2209B342159AFE7E0073E820 /* OZChildViewController.m */; };
 		2209B345159B00330073E820 /* OZNibBasedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2209B344159B00330073E820 /* OZNibBasedViewController.xib */; };
+		2209B351159B0FF20073E820 /* icon_github.png in Resources */ = {isa = PBXBuildFile; fileRef = 2209B34B159B0FF20073E820 /* icon_github.png */; };
+		2209B352159B0FF20073E820 /* icon_globe.png in Resources */ = {isa = PBXBuildFile; fileRef = 2209B34C159B0FF20073E820 /* icon_globe.png */; };
+		2209B353159B0FF20073E820 /* icon_meter.png in Resources */ = {isa = PBXBuildFile; fileRef = 2209B34D159B0FF20073E820 /* icon_meter.png */; };
+		2209B354159B0FF20073E820 /* icon_power.png in Resources */ = {isa = PBXBuildFile; fileRef = 2209B34E159B0FF20073E820 /* icon_power.png */; };
+		2209B355159B0FF20073E820 /* tabbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 2209B34F159B0FF20073E820 /* tabbar.png */; };
+		2209B356159B0FF20073E820 /* tabbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2209B350159B0FF20073E820 /* tabbar@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +49,12 @@
 		2209B341159AFE7E0073E820 /* OZChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OZChildViewController.h; sourceTree = "<group>"; };
 		2209B342159AFE7E0073E820 /* OZChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OZChildViewController.m; sourceTree = "<group>"; };
 		2209B344159B00330073E820 /* OZNibBasedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OZNibBasedViewController.xib; sourceTree = "<group>"; };
+		2209B34B159B0FF20073E820 /* icon_github.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_github.png; sourceTree = "<group>"; };
+		2209B34C159B0FF20073E820 /* icon_globe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_globe.png; sourceTree = "<group>"; };
+		2209B34D159B0FF20073E820 /* icon_meter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_meter.png; sourceTree = "<group>"; };
+		2209B34E159B0FF20073E820 /* icon_power.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_power.png; sourceTree = "<group>"; };
+		2209B34F159B0FF20073E820 /* tabbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar.png; sourceTree = "<group>"; };
+		2209B350159B0FF20073E820 /* tabbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				2209B305159AFC7E0073E820 /* Frameworks */,
+				2209B34A159B0FF20073E820 /* Images */,
 				2209B322159AFD860073E820 /* OZTabBarController */,
 				2209B303159AFC7E0073E820 /* Products */,
 				2209B30C159AFC7E0073E820 /* TabBarExample */,
@@ -126,6 +139,19 @@
 			name = OZTabBarController;
 			sourceTree = "<group>";
 		};
+		2209B34A159B0FF20073E820 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				2209B34B159B0FF20073E820 /* icon_github.png */,
+				2209B34C159B0FF20073E820 /* icon_globe.png */,
+				2209B34D159B0FF20073E820 /* icon_meter.png */,
+				2209B34E159B0FF20073E820 /* icon_power.png */,
+				2209B34F159B0FF20073E820 /* tabbar.png */,
+				2209B350159B0FF20073E820 /* tabbar@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -180,6 +206,12 @@
 			files = (
 				2209B311159AFC7E0073E820 /* InfoPlist.strings in Resources */,
 				2209B345159B00330073E820 /* OZNibBasedViewController.xib in Resources */,
+				2209B351159B0FF20073E820 /* icon_github.png in Resources */,
+				2209B352159B0FF20073E820 /* icon_globe.png in Resources */,
+				2209B353159B0FF20073E820 /* icon_meter.png in Resources */,
+				2209B354159B0FF20073E820 /* icon_power.png in Resources */,
+				2209B355159B0FF20073E820 /* tabbar.png in Resources */,
+				2209B356159B0FF20073E820 /* tabbar@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

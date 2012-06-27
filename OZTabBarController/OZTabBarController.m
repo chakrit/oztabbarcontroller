@@ -19,7 +19,8 @@
 }
 
 @synthesize viewControllers = _viewControllers;
-@synthesize viewContainer = _viewContainer; // TODO: Rename to childViewContainer
+@synthesize childViewContainer = _childViewContainer;
+
 
 
 #pragma mark - Initializers
@@ -71,6 +72,7 @@
     _selectedTabControl = nil;
     
     _viewControllers = nil;
+    _childViewContainer = nil;
 }
 
 
@@ -216,7 +218,7 @@
     if (_shouldCallViewEvents)
         [newViewController viewWillAppear:NO];
     
-    [_viewContainer addSubview:newView];
+    [_childViewContainer addSubview:newView];
     [self attachNavigationItem];
     
     if (_shouldCallViewEvents)
@@ -242,7 +244,7 @@
     
     // ensure back button title use tab view's title and not child tab's
     NSArray *controllers = [[self navigationController] viewControllers];
-    if ([controllers count] < 2 || [controllers objectAtIndex:[controllers count] - 2] != elf)
+    if ([controllers count] < 2 || [controllers objectAtIndex:[controllers count] - 2] != self)
         return; // controller is being popped
     
     // new contorller was pushed onto the stack, fix back bar button title to use our title

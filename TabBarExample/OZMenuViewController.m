@@ -7,8 +7,66 @@
 //
 
 #import "OZMenuViewController.h"
+#import "OZChildViewController.h"
+#import "OZLoadViewBasedViewController.h"
+#import "OZNibBasedViewController.h"
 
 
 @implementation OZMenuViewController
+
+- (NSString *)title { return @"Menu"; }
+
+- (void)loadView {
+    CGRect frame = CGRectMake(0, 0, 320, 460);
+    UIView *view = [[UIView alloc] initWithFrame:frame];
+
+    // nib button
+    frame = CGRectMake(10, 10, 300, 100);
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [button setTitle:@"Nib-based example." forState:UIControlStateNormal];
+    [button setFrame:frame];
+    [button addTarget:self
+               action:@selector(userDidTapNibBasedExampleButton)
+     forControlEvents:UIControlEventTouchUpInside];
+    [view addSubview:button];
+    
+    // loadView button
+    frame.origin.y += frame.size.height + 10;
+    button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [button setTitle:@"loadView-based example." forState:UIControlStateNormal];
+    [button setFrame:frame];
+    [button addTarget:self
+               action:@selector(userDidTapLoadViewBasedExampleButton)
+     forControlEvents:UIControlEventTouchUpInside];
+    [view addSubview:button];
+    
+    [self setView:view];
+}
+
+
+- (void)userDidTapNibBasedExampleButton {
+    OZNibBasedViewController *controller = nil;
+    controller = [OZNibBasedViewController alloc];
+    controller = [controller initWithViewControllers:[self childViewControllers]];
+    
+    [[self navigationController] pushViewController:controller animated:YES];
+}
+
+- (void)userDidTapLoadViewBasedExampleButton {
+    OZLoadViewBasedViewController *controller = nil;
+    controller = [OZLoadViewBasedViewController alloc];
+    controller = [controller initWithViewControllers:[self childViewControllers]];
+    
+    [[self navigationController] pushViewController:controller animated:YES];
+}
+
+
+- (NSArray *)childViewControllers {
+    return [NSArray arrayWithObjects:
+            [OZChildViewController controllerWithTitle:@"First view."],
+            [OZChildViewController controllerWithTitle:@"SECOND view."],
+            [OZChildViewController controllerWithTitle:@"3rd view."],
+            [OZChildViewController controllerWithTitle:@"This view is last."], nil];
+}
 
 @end
