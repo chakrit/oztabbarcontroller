@@ -9,27 +9,35 @@
 #import "OZChildViewController.h"
 
 
-@implementation OZChildViewController
-
-+ (id)controllerWithTitle:(NSString *)title {
-    return [[OZChildViewController alloc] initWithTitle:title];
+@implementation OZChildViewController {
+    NSString *_imageName;
 }
 
-- (id)initWithTitle:(NSString *)title {
++ (id)controllerWithImageNamed:(NSString *)imageName {
+    return [[OZChildViewController alloc] initWithImageNamed:imageName];
+}
+
+- (id)initWithImageNamed:(NSString *)imageName {
     if (self = [super initWithNibName:nil bundle:nil]) {
-        [self setTitle:title];
+        _imageName = [imageName copy];
     }
     return self;
 }
 
+- (void)dealloc {
+    _imageName = nil;
+}
+
+
 - (void)loadView {
-    CGRect frame = CGRectMake(10, 10, 300, 100);
-    UILabel *label = [[UILabel alloc] initWithFrame:frame];
-    [label setFont:[UIFont fontWithName:@"Courier" size:24.0]];
-    [label setText:[self title]];
-    
-    UIView *view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    [view addSubview:label];
+    CGRect frame = CGRectMake(10, 10, 300, 300);
+    UIImage *image = [UIImage imageNamed:_imageName];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    [imageView setContentMode:UIViewContentModeScaleAspectFit];
+
+    frame = [[UIScreen mainScreen] bounds];
+    UIView *view = [[UIView alloc] initWithFrame:frame];
+    [view addSubview:imageView];
     [self setView:view];
 }
 

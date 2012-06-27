@@ -11,6 +11,6 @@
 
 @implementation OZLoadViewBasedViewController
 
-- (NSString *)title { return @"loadView-based example."; }
+- (NSString *)title { return @"(void)loadView"; }
 
 @end

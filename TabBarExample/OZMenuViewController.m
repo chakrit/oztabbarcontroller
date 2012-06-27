@@ -63,10 +63,10 @@
 
 - (NSArray *)childViewControllers {
     return [NSArray arrayWithObjects:
-            [OZChildViewController controllerWithTitle:@"First view."],
-            [OZChildViewController controllerWithTitle:@"SECOND view."],
-            [OZChildViewController controllerWithTitle:@"3rd view."],
-            [OZChildViewController controllerWithTitle:@"This view is last."], nil];
+            [OZChildViewController controllerWithImageNamed:@"icon_github.png"],
+            [OZChildViewController controllerWithImageNamed:@"icon_globe.png"],
+            [OZChildViewController controllerWithImageNamed:@"icon_meter.png"],
+            [OZChildViewController controllerWithImageNamed:@"icon_power.png"], nil];
 }
 
 @end
