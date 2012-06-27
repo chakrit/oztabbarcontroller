@@ -13,6 +13,7 @@
 		2209B311159AFC7E0073E820 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2209B30F159AFC7E0073E820 /* InfoPlist.strings */; };
 		2209B313159AFC7E0073E820 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2209B312159AFC7E0073E820 /* main.m */; };
 		2209B317159AFC7E0073E820 /* OZAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2209B316159AFC7E0073E820 /* OZAppDelegate.m */; };
+		2209B325159AFD970073E820 /* OZTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2209B324159AFD970073E820 /* OZTabBarController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		2209B314159AFC7E0073E820 /* TabBarExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TabBarExample-Prefix.pch"; sourceTree = "<group>"; };
 		2209B315159AFC7E0073E820 /* OZAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OZAppDelegate.h; sourceTree = "<group>"; };
 		2209B316159AFC7E0073E820 /* OZAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OZAppDelegate.m; sourceTree = "<group>"; };
+		2209B323159AFD970073E820 /* OZTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OZTabBarController.h; path = OZTabBarController/OZTabBarController.h; sourceTree = "<group>"; };
+		2209B324159AFD970073E820 /* OZTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OZTabBarController.m; path = OZTabBarController/OZTabBarController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				2209B305159AFC7E0073E820 /* Frameworks */,
+				2209B322159AFD860073E820 /* OZTabBarController */,
 				2209B303159AFC7E0073E820 /* Products */,
 				2209B30C159AFC7E0073E820 /* TabBarExample */,
 			);
@@ -88,6 +92,15 @@
 				2209B30F159AFC7E0073E820 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2209B322159AFD860073E820 /* OZTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				2209B323159AFD970073E820 /* OZTabBarController.h */,
+				2209B324159AFD970073E820 /* OZTabBarController.m */,
+			);
+			name = OZTabBarController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +168,7 @@
 			files = (
 				2209B313159AFC7E0073E820 /* main.m in Sources */,
 				2209B317159AFC7E0073E820 /* OZAppDelegate.m in Sources */,
+				2209B325159AFD970073E820 /* OZTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
