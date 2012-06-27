@@ -19,7 +19,6 @@
 		2247946C1591D41D00610E5E /* OZTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OZTabBarController.h; sourceTree = "<group>"; };
 		2247946D1591D41D00610E5E /* OZTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OZTabBarController.m; sourceTree = "<group>"; };
 		224794741591D7C400610E5E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		224794761591DE4E00610E5E /* OZTabBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OZTabBarController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +65,6 @@
 			children = (
 				2247946C1591D41D00610E5E /* OZTabBarController.h */,
 				2247946D1591D41D00610E5E /* OZTabBarController.m */,
-				224794761591DE4E00610E5E /* OZTabBarController.xib */,
 				2247946A1591D41D00610E5E /* Supporting Files */,
 			);
 			path = OZTabBarController;
@@ -233,6 +231,7 @@
 				224794731591D41D00610E5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
