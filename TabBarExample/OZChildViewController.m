@@ -34,6 +34,7 @@
     UIImage *image = [UIImage imageNamed:_imageName];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     [imageView setContentMode:UIViewContentModeScaleAspectFit];
+    [imageView setFrame:frame];
 
     frame = [[UIScreen mainScreen] bounds];
     UIView *view = [[UIView alloc] initWithFrame:frame];

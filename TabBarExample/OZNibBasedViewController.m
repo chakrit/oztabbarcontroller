@@ -15,6 +15,8 @@
 - (NSString *)title { return @"OZNibBasedViewController.xib"; }
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
+    
     // add some shadow to buttons so its more visible
     for (id btn in [[self view] subviews]) {
         if (![btn isKindOfClass:[UIButton class]]) continue;
