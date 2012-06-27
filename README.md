@@ -1,4 +1,26 @@
-oztabbarcontroller
+OZTabBarController
 ==================
 
-OZTabBarController
+A lightweight tab bar controller geared for maximum customizability. It simply handles the job of switching views and leave everything else for you to customize. Supports using a NIB file to create the main view.
+
+## Usage:
+
+### Nib-based
+
+Use the `initWithViewControllers:` method or use the designated intializer `initWithNibName:bundle:viewControllers:` to create a tab view with the specified view controllers and load view form the specified NIB file.
+
+Or just extends the `OZTabBarController` class directly and add a NIB file with the same name to your project.
+
+The NIB file should have these connections:
+* The standard `view` property for the view controller.
+* The `childViewContainer` property should be connected to a `UIView` that will be used to place child tab's views.
+* `userDidTapTabButton` action should be connected from a `UIControl` which should triggers the respective tab displays. Set the `tag` property to index of the tab you wish to display after clicking the button (or whatever action you have wired for your control.)
+
+### loadView-based
+
+If you don't use interface builder and just build your views from `loadView` just make sure:
+
+* That you call the designated initializer, which is `initWithNibName:bundle:viewControllers:`
+* That you have set the `childViewContainer` property to a `UIView` instance to which the child tab view should be put to display.
+* That you call either `setSelectedTabIndex` or `setSelectedViewControler` to display the tab as needed.
+
