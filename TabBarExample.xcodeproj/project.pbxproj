@@ -1,0 +1,265 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2209B307159AFC7E0073E820 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2209B306159AFC7E0073E820 /* UIKit.framework */; };
+		2209B309159AFC7E0073E820 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2209B308159AFC7E0073E820 /* Foundation.framework */; };
+		2209B30B159AFC7E0073E820 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2209B30A159AFC7E0073E820 /* CoreGraphics.framework */; };
+		2209B311159AFC7E0073E820 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2209B30F159AFC7E0073E820 /* InfoPlist.strings */; };
+		2209B313159AFC7E0073E820 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2209B312159AFC7E0073E820 /* main.m */; };
+		2209B317159AFC7E0073E820 /* OZAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2209B316159AFC7E0073E820 /* OZAppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2209B302159AFC7E0073E820 /* TabBarExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabBarExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2209B306159AFC7E0073E820 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2209B308159AFC7E0073E820 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2209B30A159AFC7E0073E820 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2209B30E159AFC7E0073E820 /* TabBarExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TabBarExample-Info.plist"; sourceTree = "<group>"; };
+		2209B310159AFC7E0073E820 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2209B312159AFC7E0073E820 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2209B314159AFC7E0073E820 /* TabBarExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TabBarExample-Prefix.pch"; sourceTree = "<group>"; };
+		2209B315159AFC7E0073E820 /* OZAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OZAppDelegate.h; sourceTree = "<group>"; };
+		2209B316159AFC7E0073E820 /* OZAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OZAppDelegate.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2209B2FF159AFC7E0073E820 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2209B307159AFC7E0073E820 /* UIKit.framework in Frameworks */,
+				2209B309159AFC7E0073E820 /* Foundation.framework in Frameworks */,
+				2209B30B159AFC7E0073E820 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2209B2F7159AFC7E0073E820 = {
+			isa = PBXGroup;
+			children = (
+				2209B30C159AFC7E0073E820 /* TabBarExample */,
+				2209B305159AFC7E0073E820 /* Frameworks */,
+				2209B303159AFC7E0073E820 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2209B303159AFC7E0073E820 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2209B302159AFC7E0073E820 /* TabBarExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2209B305159AFC7E0073E820 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2209B306159AFC7E0073E820 /* UIKit.framework */,
+				2209B308159AFC7E0073E820 /* Foundation.framework */,
+				2209B30A159AFC7E0073E820 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2209B30C159AFC7E0073E820 /* TabBarExample */ = {
+			isa = PBXGroup;
+			children = (
+				2209B315159AFC7E0073E820 /* OZAppDelegate.h */,
+				2209B316159AFC7E0073E820 /* OZAppDelegate.m */,
+				2209B30D159AFC7E0073E820 /* Supporting Files */,
+			);
+			path = TabBarExample;
+			sourceTree = "<group>";
+		};
+		2209B30D159AFC7E0073E820 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2209B30E159AFC7E0073E820 /* TabBarExample-Info.plist */,
+				2209B30F159AFC7E0073E820 /* InfoPlist.strings */,
+				2209B312159AFC7E0073E820 /* main.m */,
+				2209B314159AFC7E0073E820 /* TabBarExample-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2209B301159AFC7E0073E820 /* TabBarExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2209B31A159AFC7E0073E820 /* Build configuration list for PBXNativeTarget "TabBarExample" */;
+			buildPhases = (
+				2209B2FE159AFC7E0073E820 /* Sources */,
+				2209B2FF159AFC7E0073E820 /* Frameworks */,
+				2209B300159AFC7E0073E820 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TabBarExample;
+			productName = TabBarExample;
+			productReference = 2209B302159AFC7E0073E820 /* TabBarExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2209B2F9159AFC7E0073E820 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = OZ;
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "Oozou Ltd.";
+			};
+			buildConfigurationList = 2209B2FC159AFC7E0073E820 /* Build configuration list for PBXProject "TabBarExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2209B2F7159AFC7E0073E820;
+			productRefGroup = 2209B303159AFC7E0073E820 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2209B301159AFC7E0073E820 /* TabBarExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2209B300159AFC7E0073E820 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2209B311159AFC7E0073E820 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2209B2FE159AFC7E0073E820 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2209B313159AFC7E0073E820 /* main.m in Sources */,
+				2209B317159AFC7E0073E820 /* OZAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2209B30F159AFC7E0073E820 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2209B310159AFC7E0073E820 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2209B318159AFC7E0073E820 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2209B319159AFC7E0073E820 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2209B31B159AFC7E0073E820 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TabBarExample/TabBarExample-Prefix.pch";
+				INFOPLIST_FILE = "TabBarExample/TabBarExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2209B31C159AFC7E0073E820 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TabBarExample/TabBarExample-Prefix.pch";
+				INFOPLIST_FILE = "TabBarExample/TabBarExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2209B2FC159AFC7E0073E820 /* Build configuration list for PBXProject "TabBarExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2209B318159AFC7E0073E820 /* Debug */,
+				2209B319159AFC7E0073E820 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2209B31A159AFC7E0073E820 /* Build configuration list for PBXNativeTarget "TabBarExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2209B31B159AFC7E0073E820 /* Debug */,
+				2209B31C159AFC7E0073E820 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2209B2F9159AFC7E0073E820 /* Project object */;
+}
