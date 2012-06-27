@@ -14,6 +14,11 @@
 		2209B313159AFC7E0073E820 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2209B312159AFC7E0073E820 /* main.m */; };
 		2209B317159AFC7E0073E820 /* OZAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2209B316159AFC7E0073E820 /* OZAppDelegate.m */; };
 		2209B325159AFD970073E820 /* OZTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2209B324159AFD970073E820 /* OZTabBarController.m */; };
+		2209B328159AFE080073E820 /* OZMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2209B327159AFE080073E820 /* OZMenuViewController.m */; };
+		2209B32B159AFE520073E820 /* OZNibBasedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2209B32A159AFE520073E820 /* OZNibBasedViewController.m */; };
+		2209B340159AFE730073E820 /* OZLoadViewBasedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2209B33F159AFE730073E820 /* OZLoadViewBasedViewController.m */; };
+		2209B343159AFE7E0073E820 /* OZChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2209B342159AFE7E0073E820 /* OZChildViewController.m */; };
+		2209B345159B00330073E820 /* OZNibBasedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2209B344159B00330073E820 /* OZNibBasedViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +34,15 @@
 		2209B316159AFC7E0073E820 /* OZAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OZAppDelegate.m; sourceTree = "<group>"; };
 		2209B323159AFD970073E820 /* OZTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OZTabBarController.h; path = OZTabBarController/OZTabBarController.h; sourceTree = "<group>"; };
 		2209B324159AFD970073E820 /* OZTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OZTabBarController.m; path = OZTabBarController/OZTabBarController.m; sourceTree = "<group>"; };
+		2209B326159AFE080073E820 /* OZMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OZMenuViewController.h; sourceTree = "<group>"; };
+		2209B327159AFE080073E820 /* OZMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OZMenuViewController.m; sourceTree = "<group>"; };
+		2209B329159AFE520073E820 /* OZNibBasedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OZNibBasedViewController.h; sourceTree = "<group>"; };
+		2209B32A159AFE520073E820 /* OZNibBasedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OZNibBasedViewController.m; sourceTree = "<group>"; };
+		2209B33E159AFE730073E820 /* OZLoadViewBasedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OZLoadViewBasedViewController.h; sourceTree = "<group>"; };
+		2209B33F159AFE730073E820 /* OZLoadViewBasedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OZLoadViewBasedViewController.m; sourceTree = "<group>"; };
+		2209B341159AFE7E0073E820 /* OZChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OZChildViewController.h; sourceTree = "<group>"; };
+		2209B342159AFE7E0073E820 /* OZChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OZChildViewController.m; sourceTree = "<group>"; };
+		2209B344159B00330073E820 /* OZNibBasedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OZNibBasedViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +91,16 @@
 			isa = PBXGroup;
 			children = (
 				2209B315159AFC7E0073E820 /* OZAppDelegate.h */,
+				2209B341159AFE7E0073E820 /* OZChildViewController.h */,
+				2209B33E159AFE730073E820 /* OZLoadViewBasedViewController.h */,
+				2209B326159AFE080073E820 /* OZMenuViewController.h */,
+				2209B329159AFE520073E820 /* OZNibBasedViewController.h */,
 				2209B316159AFC7E0073E820 /* OZAppDelegate.m */,
+				2209B342159AFE7E0073E820 /* OZChildViewController.m */,
+				2209B33F159AFE730073E820 /* OZLoadViewBasedViewController.m */,
+				2209B327159AFE080073E820 /* OZMenuViewController.m */,
+				2209B32A159AFE520073E820 /* OZNibBasedViewController.m */,
+				2209B344159B00330073E820 /* OZNibBasedViewController.xib */,
 				2209B30D159AFC7E0073E820 /* Supporting Files */,
 			);
 			path = TabBarExample;
@@ -156,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2209B311159AFC7E0073E820 /* InfoPlist.strings in Resources */,
+				2209B345159B00330073E820 /* OZNibBasedViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +193,10 @@
 				2209B313159AFC7E0073E820 /* main.m in Sources */,
 				2209B317159AFC7E0073E820 /* OZAppDelegate.m in Sources */,
 				2209B325159AFD970073E820 /* OZTabBarController.m in Sources */,
+				2209B328159AFE080073E820 /* OZMenuViewController.m in Sources */,
+				2209B32B159AFE520073E820 /* OZNibBasedViewController.m in Sources */,
+				2209B340159AFE730073E820 /* OZLoadViewBasedViewController.m in Sources */,
+				2209B343159AFE7E0073E820 /* OZChildViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
