@@ -6,10 +6,9 @@
 //  Copyright (c) 2012 Oozou Ltd. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 
 @interface OZAppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic, readonly) UIWindow *window;
 
 @end

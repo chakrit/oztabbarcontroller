@@ -45,9 +45,9 @@
 		2209B2F7159AFC7E0073E820 = {
 			isa = PBXGroup;
 			children = (
-				2209B30C159AFC7E0073E820 /* TabBarExample */,
 				2209B305159AFC7E0073E820 /* Frameworks */,
 				2209B303159AFC7E0073E820 /* Products */,
+				2209B30C159AFC7E0073E820 /* TabBarExample */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,10 +82,10 @@
 		2209B30D159AFC7E0073E820 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2209B30E159AFC7E0073E820 /* TabBarExample-Info.plist */,
-				2209B30F159AFC7E0073E820 /* InfoPlist.strings */,
 				2209B312159AFC7E0073E820 /* main.m */,
 				2209B314159AFC7E0073E820 /* TabBarExample-Prefix.pch */,
+				2209B30E159AFC7E0073E820 /* TabBarExample-Info.plist */,
+				2209B30F159AFC7E0073E820 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -258,6 +258,7 @@
 				2209B31C159AFC7E0073E820 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
