@@ -9,6 +9,7 @@
 
 @interface OZChildViewController : UIViewController
 
++ (id)controllerWithTitle:(NSString *)title;
 - (id)initWithTitle:(NSString *)title;
 
 @end

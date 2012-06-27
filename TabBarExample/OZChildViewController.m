@@ -11,6 +11,10 @@
 
 @implementation OZChildViewController
 
++ (id)controllerWithTitle:(NSString *)title {
+    return [[OZChildViewController alloc] initWithTitle:title];
+}
+
 - (id)initWithTitle:(NSString *)title {
     if (self = [super initWithNibName:nil bundle:nil]) {
         [self setTitle:title];
