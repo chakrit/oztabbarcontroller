@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2209B373159B2CF10073E820 /* OZTabBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2247946C1591D41D00610E5E /* OZTabBarController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		224794681591D41D00610E5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224794671591D41D00610E5E /* Foundation.framework */; };
 		2247946E1591D41D00610E5E /* OZTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2247946D1591D41D00610E5E /* OZTabBarController.m */; };
 		224794751591D7C400610E5E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224794741591D7C400610E5E /* UIKit.framework */; };
@@ -85,6 +86,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2209B373159B2CF10073E820 /* OZTabBarController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
