@@ -176,6 +176,8 @@
 
 #pragma mark - Misc handlers
 
+// TODO: There is no way to highlight the first control via setActiveTab:0
+// since we don't have access to the list of UIControls the user might have been using.
 - (void)userDidTapTabButton:(id)sender {
     if (![sender isKindOfClass:[UIControl class]]) {
         NSLog(@"userDidTapTabButton called with sender that is not a UIControl.");
