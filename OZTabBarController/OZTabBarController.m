@@ -57,9 +57,9 @@
     _selectedViewController = nil;
     _selectedTabControl = nil;
     _selectedTabIndex = -1;
-
+    
     _navigationItemAttached = NO;
-        
+    
     // iOS >= 5 automatically call view events on addSubview
     float osVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
     _shouldCallViewEvents = osVersion < 5.0;
@@ -204,9 +204,11 @@
     
     if (_shouldCallViewEvents)
         [oldViewController viewWillDisappear:NO];
-    
+
+    [_selectedViewController willMoveToParentViewController:nil];
     [self detachNavigationItem];
     [oldView removeFromSuperview];
+    [_selectedViewController removeFromParentViewController];
     
     if (_shouldCallViewEvents)
         [oldViewController viewDidDisappear:NO];
@@ -216,12 +218,14 @@
     UIView *newView = [newViewController view];
     _selectedViewController = newViewController;
     _selectedTabIndex = tabIndex;
-
+    
     if (_shouldCallViewEvents)
         [newViewController viewWillAppear:NO];
     
+    [self addChildViewController:_selectedViewController];
     [_childViewContainer addSubview:newView];
     [self attachNavigationItem];
+    [_selectedViewController didMoveToParentViewController:self];
     
     if (_shouldCallViewEvents)
         [newViewController viewDidAppear:NO];    
