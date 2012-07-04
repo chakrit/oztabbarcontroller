@@ -196,7 +196,15 @@
 
 /// Main tab event handler sink
 - (void)setActiveTab:(NSUInteger)tabIndex {
-    if (tabIndex == _selectedTabIndex) return;
+    if (tabIndex == _selectedTabIndex) {
+        if (![_selectedViewController isKindOfClass:[UINavigationController class]])
+            return;
+        
+        // pop to root view for navigation controllers on tapping the tab again.
+        UINavigationController *nav = (id)_selectedViewController;
+        [nav popToRootViewControllerAnimated:YES];
+        return;
+    }
     
     // remove old view controller
     UIViewController *oldViewController = _selectedViewController;
@@ -228,7 +236,7 @@
     [_selectedViewController didMoveToParentViewController:self];
     
     if (_shouldCallViewEvents)
-        [newViewController viewDidAppear:NO];    
+        [newViewController viewDidAppear:NO];
 }
 
 
