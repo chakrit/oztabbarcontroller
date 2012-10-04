@@ -21,6 +21,7 @@
 @synthesize viewControllers = _viewControllers;
 @synthesize childViewContainer = _childViewContainer;
 
+@synthesize tagOffset = _tagOffset;
 
 
 #pragma mark - Initializers
@@ -48,6 +49,7 @@
       viewControllers:(NSArray *)viewControllers {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         _viewControllers = [NSArray arrayWithArray:viewControllers];
+        _tagOffset = 0;
         [self didInit];
     }
     return self;
@@ -80,7 +82,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setActiveTab:0]; // also attachNavigationItem
+
+    // select first view (and attachNavigationItem)
+    UIView *firstTab = [[self view] viewWithTag:self.tagOffset + 0];
+    if ([firstTab isKindOfClass:[UIControl class]]) { // using nib-based approach
+        [self userDidTapTabButton:firstTab];
+
+    } else { // using loadView approach
+        [self setActiveTab:0];
+    }
 }
 
 - (void)viewWillUnload {
@@ -176,16 +186,15 @@
 
 #pragma mark - Misc handlers
 
-// TODO: There is no way to highlight the first control via setActiveTab:0
 // since we don't have access to the list of UIControls the user might have been using.
 - (void)userDidTapTabButton:(id)sender {
     if (![sender isKindOfClass:[UIControl class]]) {
         NSLog(@"userDidTapTabButton called with sender that is not a UIControl.");
         return;
     }
-    
+
     UIControl *tabControl = sender;
-    [self setActiveTab:[tabControl tag]];
+    [self setActiveTab:[tabControl tag] - self.tagOffset];
     
     // update selected button state
     [_selectedTabControl setSelected:NO];

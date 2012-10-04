@@ -17,6 +17,7 @@
 
 @property (nonatomic, strong) UIViewController *selectedViewController;
 @property (nonatomic) NSUInteger selectedTabIndex;
+@property (nonatomic) NSInteger tagOffset;
 
 - (id)initWithViewControllers:(NSArray *)viewControllers;
 - (id)initWithNibName:(NSString *)nibNameOrNil

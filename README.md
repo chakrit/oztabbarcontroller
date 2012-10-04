@@ -16,6 +16,18 @@ The NIB file should have these connections:
 * The `childViewContainer` property should be connected to a `UIView` that will be used to place child tab's views.
 * `userDidTapTabButton` action should be connected from a `UIControl` which should triggers the respective tab displays. Set the `tag` property to index of the tab you wish to display after clicking the button (or whatever action you have wired for your control.)
 
+### Tag offsets
+
+Because tab indexes are zero-based and you might need to use view tags for other purposes, `OZTabBarController` now supports a `tagOffset` property. You can override this property to specify the number the controller should subtracts from the view tag to obtain the tab index.
+
+For example, if you have your tab buttons' tags set to 100, 101, 102, .. you can set `tagOffset` to 100 by placing the following override block on your `ViewControler.m` file:
+
+    - (NSInteger)tagOffset {
+          return 100;
+    }
+
+or simply place `self.tagOffset = 100` in your subclass's init method.
+
 ### loadView-based
 
 If you don't use interface builder and just build your views from `loadView` just make sure:

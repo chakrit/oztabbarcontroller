@@ -14,6 +14,10 @@
 
 - (NSString *)title { return @"OZNibBasedViewController.xib"; }
 
+- (NSInteger)tagOffset {
+    return 100;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
