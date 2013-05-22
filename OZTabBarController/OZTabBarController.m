@@ -240,6 +240,7 @@
         [newViewController viewWillAppear:NO];
     
     [self addChildViewController:_selectedViewController];
+    newView.frame = _childViewContainer.bounds;
     [_childViewContainer addSubview:newView];
     [self attachNavigationItem];
     [_selectedViewController didMoveToParentViewController:self];
