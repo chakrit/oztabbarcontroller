@@ -21,7 +21,7 @@
     UIView *view = [[UIView alloc] initWithFrame:frame];
 
     // nib button
-    frame = CGRectMake(10, 10, 300, 100);
+    frame = CGRectMake(10, 100, 300, 50);
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [button setTitle:@"Nib-based example." forState:UIControlStateNormal];
     [button setFrame:frame];

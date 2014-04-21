@@ -18,11 +18,6 @@
     BOOL _navigationItemAttached;
 }
 
-@synthesize viewControllers = _viewControllers;
-@synthesize childViewContainer = _childViewContainer;
-
-@synthesize tagOffset = _tagOffset;
-
 
 #pragma mark - Initializers
 
@@ -76,6 +71,12 @@
     _viewControllers = nil;
     _childViewContainer = nil;
 }
+
+
+// NOTE: For iOS 7 layouts that must not extend underneath the navigation bar, add the following
+//   method override (or call the setter as early as possible.)
+// REF: http://stackoverflow.com/questions/18294872/ios-7-status-bar-back-to-ios-6-default-style-in-iphone-app/18855464#18855464
+// - (UIRectEdge)edgesForExtendedLayout { return UIRectEdgeNone; }
 
 
 #pragma mark - View events
@@ -238,12 +239,15 @@
     
     if (_shouldCallViewEvents)
         [newViewController viewWillAppear:NO];
-    
+
     [self addChildViewController:_selectedViewController];
-    newView.frame = _childViewContainer.bounds;
     [_childViewContainer addSubview:newView];
     [self attachNavigationItem];
     [_selectedViewController didMoveToParentViewController:self];
+
+    CGRect newFrame = [_childViewContainer bounds];
+    newFrame.origin = CGPointMake(0, 0);
+    [newView setFrame:newFrame];
     
     if (_shouldCallViewEvents)
         [newViewController viewDidAppear:NO];

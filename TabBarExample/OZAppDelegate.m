@@ -12,9 +12,6 @@
 
 @implementation OZAppDelegate
 
-@synthesize window = _window;
-
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     OZMenuViewController *menuViewController = nil;
@@ -23,7 +20,7 @@
     UINavigationController *nav = nil;
     nav = [UINavigationController alloc];
     nav = [nav initWithRootViewController:menuViewController];
-    
+
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [_window setRootViewController:nav];
     [_window setBackgroundColor:[UIColor whiteColor]];

@@ -9,6 +9,6 @@
 
 @interface OZAppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic, readonly) UIWindow *window;
+@property (strong, nonatomic) UIWindow *window;
 
 @end
