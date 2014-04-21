@@ -43,7 +43,24 @@ If you don't use interface builder and just build your views from `loadView` jus
 * That you have set the `childViewContainer` property to a `UIView` instance to which the child tab view should be put to display.
 * That you call either `setSelectedTabIndex` or `setSelectedViewControler` to display the tab as needed.
 
+## iOS 7 notes
+
+If you are using `OZTabBarController` inside a `UINavigationController` and find that the
+view extends underneath the navigation bar, you can override the following method to
+prevent this behavior.
+
+```objective-c
+- (UIRectEdge)edgesForExtendedLayout {
+  return UIRectEdgeNone;
+}
+```
+
+Or use the respective setter to set the value as early as possible in your view controller
+lifecycle.
+
+Refer to [this SO question](http://stackoverflow.com/q/18294872/3055) for more information.
+
 ## License:
 
-BSD
+BSD2 (See LICENSE file for details)
 
