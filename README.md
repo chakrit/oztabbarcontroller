@@ -12,6 +12,8 @@ A lightweight tab bar controller geared for maximum customizability. It simply h
 
 ## Usage:
 
+CocoaPods: `pod 'OZTabBarController', '~> 0.1.1'`
+
 ### Nib-based
 
 Use the `initWithViewControllers:` method or use the designated intializer `initWithNibName:bundle:viewControllers:` to create a tab view with the specified view controllers and load view form the specified NIB file.
