@@ -18,37 +18,31 @@
 - (NSString *)title { return @"(void)loadView"; }
 
 - (void)loadView {
-    CGRect frame = CGRectZero;
-    
+    UIView *container = [[UIView alloc] init];
+    [container setBackgroundColor:[UIColor whiteColor]];
+    [container setOpaque:YES];
+
+    UIView *childContainer = [[UIView alloc] init];
+    [childContainer setTranslatesAutoresizingMaskIntoConstraints:NO];
+
+    [container addSubview:childContainer];
+    [self addConstraintToView:childContainer toFillView:container];
+
     // picker view for selecting tabs
     UIPickerView *pickerView = [[UIPickerView alloc] init];
     [pickerView setDataSource:self];
     [pickerView setDelegate:self];
     [pickerView setShowsSelectionIndicator:YES];
-    
-    frame = [pickerView frame];
-    frame.origin.y = 460 - frame.size.height;
-    [pickerView setFrame:frame];
-    
-    // view to display child tabs view
-    frame = CGRectMake(0, 0, 320, 460 - frame.size.height);
-    UIView *container = [[UIView alloc] init];
-    [container setFrame:frame];
-    
-    self.childViewContainer = container;
-    
-    // main view
-    frame = CGRectMake(0, 0, 320, 460);
-    UIView *view = [[UIView alloc] init];
-    [view setFrame:frame];
-    [view addSubview:container];
-    [view addSubview:pickerView];
-    
-    // finish
-    self.childViewContainer = container;
+    [pickerView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [pickerView setBackgroundColor:[[UIColor grayColor] colorWithAlphaComponent:0.5]];
     _pickerView = pickerView;
-    
-    [self setView:view];
+
+    [container addSubview:pickerView];
+    [self addConstraintToView:_pickerView toAlignBottomInContainer:container];
+
+    _pickerView = pickerView;
+    [self setChildViewContainer:childContainer];
+    [self setView:container];
 }
 
 

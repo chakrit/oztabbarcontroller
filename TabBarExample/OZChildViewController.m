@@ -15,8 +15,7 @@
 }
 
 + (id)controllerWithImageNamed:(NSString *)imageName {
-    UIViewController *controller = [[OZChildViewController alloc] initWithImageNamed:imageName];
-    return [[UINavigationController alloc] initWithRootViewController:controller];
+    return [[OZChildViewController alloc] initWithImageNamed:imageName];
 }
 
 - (id)initWithImageNamed:(NSString *)imageName {
@@ -37,23 +36,32 @@
 }
 
 
+- (void)willMoveToParentViewController:(UIViewController *)parent {
+}
+
+- (void)didMoveToParentViewController:(UIViewController *)parent {
+}
+
+
 - (void)loadView {
-    CGRect frame = CGRectMake(10, 10, 300, 300);
     UIImage *image = [UIImage imageNamed:_imageName];
 
+    UIView *container = [[UIView alloc] init];
+    [container setTranslatesAutoresizingMaskIntoConstraints:NO];
+
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    [imageView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [imageView setContentMode:UIViewContentModeScaleAspectFit];
     [imageView setUserInteractionEnabled:YES];
-    [imageView setFrame:frame];
 
     UITapGestureRecognizer *tap = [UITapGestureRecognizer alloc];
     tap = [tap initWithTarget:self action:@selector(userDidTapImage:)];
     [imageView addGestureRecognizer:tap];
 
-    frame = [[UIScreen mainScreen] bounds];
-    UIView *view = [[UIView alloc] initWithFrame:frame];
-    [view addSubview:imageView];
-    [self setView:view];
+    [container addSubview:imageView];
+    [self addConstraintToView:imageView toCenterInContainer:container];
+
+    [self setView:container];
 }
 
 @end

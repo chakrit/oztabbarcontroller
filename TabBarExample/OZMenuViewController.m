@@ -17,29 +17,34 @@
 - (NSString *)title { return @"Menu"; }
 
 - (void)loadView {
-    CGRect frame = CGRectMake(0, 0, 320, 460);
-    UIView *view = [[UIView alloc] initWithFrame:frame];
+    UIView *view = [[UIView alloc] init];
 
     // nib button
-    frame = CGRectMake(10, 100, 300, 50);
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [button setTitle:@"Nib-based example." forState:UIControlStateNormal];
-    [button setFrame:frame];
+    [button setTranslatesAutoresizingMaskIntoConstraints:NO];
     [button addTarget:self
                action:@selector(userDidTapNibBasedExampleButton)
      forControlEvents:UIControlEventTouchUpInside];
+
     [view addSubview:button];
+    [self addConstraintToView:button
+        toAlignTopInContainer:view
+                   topPadding:100.0];
     
     // loadView button
-    frame.origin.y += frame.size.height + 10;
     button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [button setTitle:@"loadView-based example." forState:UIControlStateNormal];
-    [button setFrame:frame];
+    [button setTranslatesAutoresizingMaskIntoConstraints:NO];
     [button addTarget:self
                action:@selector(userDidTapLoadViewBasedExampleButton)
      forControlEvents:UIControlEventTouchUpInside];
+
     [view addSubview:button];
-    
+    [self addConstraintToView:button
+        toAlignTopInContainer:view
+                   topPadding:160.0];
+
     [self setView:view];
 }
 

@@ -13,8 +13,8 @@
     NSUInteger _selectedTabIndex;
     UIControl *_selectedTabControl;
     UIViewController *_selectedViewController;
-    
-    BOOL _shouldCallViewEvents;
+
+    NSArray *_contentViewConstraints;
     BOOL _navigationItemAttached;
 }
 
@@ -54,12 +54,7 @@
     _selectedViewController = nil;
     _selectedTabControl = nil;
     _selectedTabIndex = -1;
-    
     _navigationItemAttached = NO;
-    
-    // iOS >= 5 automatically call view events on addSubview
-    float osVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
-    _shouldCallViewEvents = osVersion < 5.0;
 }
 
 - (void)dealloc {
@@ -126,7 +121,7 @@
 - (void)attachNavigationItem {
     if (_navigationItemAttached) return;
     
-    [self childNavigationItemDidChange]; // update once
+    [self childNavigationItemDidChange];
     
     UINavigationItem *childItem = [_selectedViewController navigationItem];    
     [childItem addObserver:self
@@ -224,37 +219,55 @@
     UIViewController *oldViewController = _selectedViewController;
     UIView *oldView = [oldViewController view];
     
-    if (_shouldCallViewEvents)
-        [oldViewController viewWillDisappear:NO];
-
     [_selectedViewController willMoveToParentViewController:nil];
     [self detachNavigationItem];
     [oldView removeFromSuperview];
+    if (_contentViewConstraints) [_childViewContainer removeConstraints:_contentViewConstraints];
     [_selectedViewController removeFromParentViewController];
-    
-    if (_shouldCallViewEvents)
-        [oldViewController viewDidDisappear:NO];
-    
+
     // re-wire internal state and display new view controller    
     UIViewController *newViewController = [_viewControllers objectAtIndex:tabIndex];
     UIView *newView = [newViewController view];
     _selectedViewController = newViewController;
     _selectedTabIndex = tabIndex;
-    
-    if (_shouldCallViewEvents)
-        [newViewController viewWillAppear:NO];
 
     [self addChildViewController:_selectedViewController];
     [_childViewContainer addSubview:newView];
     [self attachNavigationItem];
-    [_selectedViewController didMoveToParentViewController:self];
 
-    CGRect newFrame = [_childViewContainer bounds];
-    newFrame.origin = CGPointMake(0, 0);
-    [newView setFrame:newFrame];
-    
-    if (_shouldCallViewEvents)
-        [newViewController viewDidAppear:NO];
+    NSMutableArray *constraints = [NSMutableArray arrayWithCapacity:4];
+    [constraints addObject:[NSLayoutConstraint constraintWithItem:newView
+                                                        attribute:NSLayoutAttributeWidth
+                                                        relatedBy:NSLayoutRelationEqual
+                                                           toItem:_childViewContainer
+                                                        attribute:NSLayoutAttributeWidth
+                                                       multiplier:1.0
+                                                         constant:0.0]];
+    [constraints addObject:[NSLayoutConstraint constraintWithItem:newView
+                                                        attribute:NSLayoutAttributeHeight
+                                                        relatedBy:NSLayoutRelationEqual
+                                                           toItem:_childViewContainer
+                                                        attribute:NSLayoutAttributeHeight
+                                                       multiplier:1.0
+                                                         constant:0.0]];
+    [constraints addObject:[NSLayoutConstraint constraintWithItem:newView
+                                                        attribute:NSLayoutAttributeCenterX
+                                                        relatedBy:NSLayoutRelationEqual
+                                                           toItem:_childViewContainer
+                                                        attribute:NSLayoutAttributeCenterX
+                                                       multiplier:1.0
+                                                         constant:0.0]];
+    [constraints addObject:[NSLayoutConstraint constraintWithItem:newView
+                                                        attribute:NSLayoutAttributeCenterY
+                                                        relatedBy:NSLayoutRelationEqual
+                                                           toItem:_childViewContainer
+                                                        attribute:NSLayoutAttributeCenterY
+                                                       multiplier:1.0
+                                                         constant:0.0]];
+
+    _contentViewConstraints = constraints;
+    [_childViewContainer addConstraints:_contentViewConstraints];
+    [_selectedViewController didMoveToParentViewController:self];
 }
 
 

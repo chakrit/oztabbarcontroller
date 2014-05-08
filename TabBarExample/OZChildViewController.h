@@ -10,6 +10,5 @@
 @interface OZChildViewController : UIViewController
 
 + (id)controllerWithImageNamed:(NSString *)imageName;
-- (id)initWithImageNamed:(NSString *)imageName;
 
 @end

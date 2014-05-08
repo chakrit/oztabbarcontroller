@@ -30,6 +30,7 @@
 		2235F752161D82EB00E55B15 /* icon_meter_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 2235F74E161D82EB00E55B15 /* icon_meter_selected.png */; };
 		2235F753161D82EB00E55B15 /* icon_power_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 2235F74F161D82EB00E55B15 /* icon_power_selected.png */; };
 		2259028219050D0300B257C6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2259028119050D0300B257C6 /* Default-568h@2x.png */; };
+		22937B61191B6A79006FA4FE /* UIViewController+ConstraintHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 22937B60191B6A79006FA4FE /* UIViewController+ConstraintHelpers.m */; };
 		22C1A09E191B5FAA00D18B28 /* OZSecondChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C1A09C191B5FAA00D18B28 /* OZSecondChildViewController.m */; };
 		22C1A09F191B5FAA00D18B28 /* OZSecondChildViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22C1A09D191B5FAA00D18B28 /* OZSecondChildViewController.xib */; };
 /* End PBXBuildFile section */
@@ -67,6 +68,8 @@
 		2235F74E161D82EB00E55B15 /* icon_meter_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_meter_selected.png; sourceTree = "<group>"; };
 		2235F74F161D82EB00E55B15 /* icon_power_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_power_selected.png; sourceTree = "<group>"; };
 		2259028119050D0300B257C6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		22937B5F191B6A79006FA4FE /* UIViewController+ConstraintHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ConstraintHelpers.h"; sourceTree = "<group>"; };
+		22937B60191B6A79006FA4FE /* UIViewController+ConstraintHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ConstraintHelpers.m"; sourceTree = "<group>"; };
 		22C1A09B191B5FAA00D18B28 /* OZSecondChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OZSecondChildViewController.h; sourceTree = "<group>"; };
 		22C1A09C191B5FAA00D18B28 /* OZSecondChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OZSecondChildViewController.m; sourceTree = "<group>"; };
 		22C1A09D191B5FAA00D18B28 /* OZSecondChildViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OZSecondChildViewController.xib; sourceTree = "<group>"; };
@@ -125,12 +128,14 @@
 				2209B326159AFE080073E820 /* OZMenuViewController.h */,
 				2209B329159AFE520073E820 /* OZNibBasedViewController.h */,
 				22C1A09B191B5FAA00D18B28 /* OZSecondChildViewController.h */,
+				22937B5F191B6A79006FA4FE /* UIViewController+ConstraintHelpers.h */,
 				2209B316159AFC7E0073E820 /* OZAppDelegate.m */,
 				2209B342159AFE7E0073E820 /* OZChildViewController.m */,
 				2209B33F159AFE730073E820 /* OZLoadViewBasedViewController.m */,
 				2209B327159AFE080073E820 /* OZMenuViewController.m */,
 				2209B32A159AFE520073E820 /* OZNibBasedViewController.m */,
 				22C1A09C191B5FAA00D18B28 /* OZSecondChildViewController.m */,
+				22937B60191B6A79006FA4FE /* UIViewController+ConstraintHelpers.m */,
 				2209B344159B00330073E820 /* OZNibBasedViewController.xib */,
 				22C1A09D191B5FAA00D18B28 /* OZSecondChildViewController.xib */,
 				2209B30D159AFC7E0073E820 /* Supporting Files */,
@@ -254,6 +259,7 @@
 				22C1A09E191B5FAA00D18B28 /* OZSecondChildViewController.m in Sources */,
 				2209B313159AFC7E0073E820 /* main.m in Sources */,
 				2209B317159AFC7E0073E820 /* OZAppDelegate.m in Sources */,
+				22937B61191B6A79006FA4FE /* UIViewController+ConstraintHelpers.m in Sources */,
 				2209B325159AFD970073E820 /* OZTabBarController.m in Sources */,
 				2209B328159AFE080073E820 /* OZMenuViewController.m in Sources */,
 				2209B32B159AFE520073E820 /* OZNibBasedViewController.m in Sources */,
