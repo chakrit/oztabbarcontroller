@@ -7,6 +7,7 @@
 //
 
 #import "OZChildViewController.h"
+#import "OZSecondChildViewController.h"
 
 
 @implementation OZChildViewController {
@@ -14,7 +15,8 @@
 }
 
 + (id)controllerWithImageNamed:(NSString *)imageName {
-    return [[OZChildViewController alloc] initWithImageNamed:imageName];
+    UIViewController *controller = [[OZChildViewController alloc] initWithImageNamed:imageName];
+    return [[UINavigationController alloc] initWithRootViewController:controller];
 }
 
 - (id)initWithImageNamed:(NSString *)imageName {
@@ -29,12 +31,24 @@
 }
 
 
+- (void)userDidTapImage:(id)sender {
+    UIViewController *next = [[OZSecondChildViewController alloc] init];
+    [[self navigationController] pushViewController:next animated:YES];
+}
+
+
 - (void)loadView {
     CGRect frame = CGRectMake(10, 10, 300, 300);
     UIImage *image = [UIImage imageNamed:_imageName];
+
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     [imageView setContentMode:UIViewContentModeScaleAspectFit];
+    [imageView setUserInteractionEnabled:YES];
     [imageView setFrame:frame];
+
+    UITapGestureRecognizer *tap = [UITapGestureRecognizer alloc];
+    tap = [tap initWithTarget:self action:@selector(userDidTapImage:)];
+    [imageView addGestureRecognizer:tap];
 
     frame = [[UIScreen mainScreen] bounds];
     UIView *view = [[UIView alloc] initWithFrame:frame];

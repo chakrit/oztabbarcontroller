@@ -30,6 +30,8 @@
 		2235F752161D82EB00E55B15 /* icon_meter_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 2235F74E161D82EB00E55B15 /* icon_meter_selected.png */; };
 		2235F753161D82EB00E55B15 /* icon_power_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 2235F74F161D82EB00E55B15 /* icon_power_selected.png */; };
 		2259028219050D0300B257C6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2259028119050D0300B257C6 /* Default-568h@2x.png */; };
+		22C1A09E191B5FAA00D18B28 /* OZSecondChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C1A09C191B5FAA00D18B28 /* OZSecondChildViewController.m */; };
+		22C1A09F191B5FAA00D18B28 /* OZSecondChildViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22C1A09D191B5FAA00D18B28 /* OZSecondChildViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +67,9 @@
 		2235F74E161D82EB00E55B15 /* icon_meter_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_meter_selected.png; sourceTree = "<group>"; };
 		2235F74F161D82EB00E55B15 /* icon_power_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_power_selected.png; sourceTree = "<group>"; };
 		2259028119050D0300B257C6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		22C1A09B191B5FAA00D18B28 /* OZSecondChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OZSecondChildViewController.h; sourceTree = "<group>"; };
+		22C1A09C191B5FAA00D18B28 /* OZSecondChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OZSecondChildViewController.m; sourceTree = "<group>"; };
+		22C1A09D191B5FAA00D18B28 /* OZSecondChildViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OZSecondChildViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,12 +124,15 @@
 				2209B33E159AFE730073E820 /* OZLoadViewBasedViewController.h */,
 				2209B326159AFE080073E820 /* OZMenuViewController.h */,
 				2209B329159AFE520073E820 /* OZNibBasedViewController.h */,
+				22C1A09B191B5FAA00D18B28 /* OZSecondChildViewController.h */,
 				2209B316159AFC7E0073E820 /* OZAppDelegate.m */,
 				2209B342159AFE7E0073E820 /* OZChildViewController.m */,
 				2209B33F159AFE730073E820 /* OZLoadViewBasedViewController.m */,
 				2209B327159AFE080073E820 /* OZMenuViewController.m */,
 				2209B32A159AFE520073E820 /* OZNibBasedViewController.m */,
+				22C1A09C191B5FAA00D18B28 /* OZSecondChildViewController.m */,
 				2209B344159B00330073E820 /* OZNibBasedViewController.xib */,
+				22C1A09D191B5FAA00D18B28 /* OZSecondChildViewController.xib */,
 				2209B30D159AFC7E0073E820 /* Supporting Files */,
 			);
 			path = TabBarExample;
@@ -231,6 +239,7 @@
 				2259028219050D0300B257C6 /* Default-568h@2x.png in Resources */,
 				2235F751161D82EB00E55B15 /* icon_globe_selected.png in Resources */,
 				2235F752161D82EB00E55B15 /* icon_meter_selected.png in Resources */,
+				22C1A09F191B5FAA00D18B28 /* OZSecondChildViewController.xib in Resources */,
 				2235F753161D82EB00E55B15 /* icon_power_selected.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22C1A09E191B5FAA00D18B28 /* OZSecondChildViewController.m in Sources */,
 				2209B313159AFC7E0073E820 /* main.m in Sources */,
 				2209B317159AFC7E0073E820 /* OZAppDelegate.m in Sources */,
 				2209B325159AFD970073E820 /* OZTabBarController.m in Sources */,
@@ -334,6 +344,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TabBarExample/TabBarExample-Prefix.pch";
 				INFOPLIST_FILE = "TabBarExample/TabBarExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -345,6 +356,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TabBarExample/TabBarExample-Prefix.pch";
 				INFOPLIST_FILE = "TabBarExample/TabBarExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

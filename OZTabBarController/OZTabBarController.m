@@ -207,9 +207,13 @@
 /// Main tab event handler sink
 - (void)setActiveTab:(NSUInteger)tabIndex {
     if (tabIndex == _selectedTabIndex) {
-        if (![_selectedViewController isKindOfClass:[UINavigationController class]])
+        UIViewController *controller = [self selectedViewController];
+        if (![controller respondsToSelector:@selector(popToRootViewControllerAnimated:)])
             return;
-        
+
+        [controller performSelector:@selector(popToRootViewControllerAnimated:)
+                         withObject:[NSNumber numberWithBool:YES]];
+
         // pop to root view for navigation controllers on tapping the tab again.
         UINavigationController *nav = (id)_selectedViewController;
         [nav popToRootViewControllerAnimated:YES];
