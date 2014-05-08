@@ -12,7 +12,7 @@ A lightweight tab bar controller geared for maximum customizability. It simply h
 
 ## Usage:
 
-CocoaPods: `pod 'OZTabBarController', '~> 0.1.1'`
+CocoaPods: `pod 'OZTabBarController', '~> 0.2.0'`
 
 ### Nib-based
 
