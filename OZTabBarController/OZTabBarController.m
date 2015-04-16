@@ -232,6 +232,7 @@
     _selectedTabIndex = tabIndex;
 
     [self addChildViewController:_selectedViewController];
+    [newView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [_childViewContainer addSubview:newView];
     [self attachNavigationItem];
 
