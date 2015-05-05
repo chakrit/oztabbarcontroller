@@ -1,11 +1,3 @@
-//
-//  OZLoadViewBasedViewController.m
-//  TabBarExample
-//
-//  Created by Chakrit Wichian on 6/27/12.
-//  Copyright (c) 2012 Oozou Ltd. All rights reserved.
-//
-
 #import "OZLoadViewBasedViewController.h"
 
 
@@ -24,7 +16,6 @@
 
     UIView *childContainer = [[UIView alloc] init];
     [childContainer setTranslatesAutoresizingMaskIntoConstraints:NO];
-
     [container addSubview:childContainer];
     [self addConstraintToView:childContainer toFillView:container];
 
@@ -33,10 +24,10 @@
     [pickerView setDataSource:self];
     [pickerView setDelegate:self];
     [pickerView setShowsSelectionIndicator:YES];
-    [pickerView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [pickerView setBackgroundColor:[[UIColor grayColor] colorWithAlphaComponent:0.5]];
     _pickerView = pickerView;
 
+    [pickerView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [container addSubview:pickerView];
     [self addConstraintToView:_pickerView toAlignBottomInContainer:container];
 

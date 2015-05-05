@@ -1,17 +1,10 @@
-//
-//  OZTabBarController.m
-//  OZTabBarController
-//
-//  Created by Chakrit Wichian on 6/20/12.
-//  Copyright (c) 2012 Oozou Ltd. All rights reserved.
-//
-
 #import "OZTabBarController.h"
 
 
 @implementation OZTabBarController {
     NSUInteger _selectedTabIndex;
     UIControl *_selectedTabControl;
+    UIView *_childViewContainer;
     UIViewController *_selectedViewController;
 
     NSArray *_contentViewConstraints;
@@ -70,14 +63,21 @@
 
 // NOTE: For iOS 7 layouts that must not extend underneath the navigation bar, add the following
 //   method override (or call the setter as early as possible.)
+//
+//   - (UIRectEdge)edgesForExtendedLayout { return UIRectEdgeNone; }
+//
 // REF: http://stackoverflow.com/questions/18294872/ios-7-status-bar-back-to-ios-6-default-style-in-iphone-app/18855464#18855464
-// - (UIRectEdge)edgesForExtendedLayout { return UIRectEdgeNone; }
 
 
 #pragma mark - View events
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    // warn if child view container not set (should be set during loadView() or init())
+    if (!_childViewContainer) {
+        NSLog(@"OZTabBarController.childViewContainer not set before viewDidLoad()");
+    }
 
     // select first view (and attachNavigationItem)
     UIView *firstTab = [[self view] viewWithTag:self.tagOffset + 0];
@@ -89,32 +89,9 @@
     }
 }
 
-- (void)viewWillUnload {
-    [self detachNavigationItem];
-    [super viewWillUnload];
-}
-
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [_selectedViewController viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    [_selectedViewController viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    
-    [self fixBackButton]; // use self.title instead of child view controller's
-    [_selectedViewController viewWillDisappear:animated];
-}
-
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
-    [_selectedViewController viewDidDisappear:animated];
+    [self detachNavigationItem];
 }
 
 
@@ -156,6 +133,15 @@
 
 
 #pragma mark - Properties
+
+- (UIView *)childViewContainer {
+    return _childViewContainer == nil ? [self view] : _childViewContainer;
+}
+
+- (void)setChildViewContainer:(UIView *)childViewContainer {
+    _childViewContainer = childViewContainer;
+}
+
 
 - (UIViewController *)selectedViewController {
     return _selectedViewController;
@@ -214,7 +200,9 @@
         [nav popToRootViewControllerAnimated:YES];
         return;
     }
-    
+
+    UIView *container = [self childViewContainer];
+
     // remove old view controller
     UIViewController *oldViewController = _selectedViewController;
     UIView *oldView = [oldViewController view];
@@ -222,7 +210,7 @@
     [_selectedViewController willMoveToParentViewController:nil];
     [self detachNavigationItem];
     [oldView removeFromSuperview];
-    if (_contentViewConstraints) [_childViewContainer removeConstraints:_contentViewConstraints];
+    if (_contentViewConstraints) [container removeConstraints:_contentViewConstraints];
     [_selectedViewController removeFromParentViewController];
 
     // re-wire internal state and display new view controller    
@@ -233,41 +221,41 @@
 
     [self addChildViewController:_selectedViewController];
     [newView setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [_childViewContainer addSubview:newView];
+    [container addSubview:newView];
     [self attachNavigationItem];
 
     NSMutableArray *constraints = [NSMutableArray arrayWithCapacity:4];
     [constraints addObject:[NSLayoutConstraint constraintWithItem:newView
                                                         attribute:NSLayoutAttributeWidth
                                                         relatedBy:NSLayoutRelationEqual
-                                                           toItem:_childViewContainer
+                                                           toItem:container
                                                         attribute:NSLayoutAttributeWidth
                                                        multiplier:1.0
                                                          constant:0.0]];
     [constraints addObject:[NSLayoutConstraint constraintWithItem:newView
                                                         attribute:NSLayoutAttributeHeight
                                                         relatedBy:NSLayoutRelationEqual
-                                                           toItem:_childViewContainer
+                                                           toItem:container
                                                         attribute:NSLayoutAttributeHeight
                                                        multiplier:1.0
                                                          constant:0.0]];
     [constraints addObject:[NSLayoutConstraint constraintWithItem:newView
                                                         attribute:NSLayoutAttributeCenterX
                                                         relatedBy:NSLayoutRelationEqual
-                                                           toItem:_childViewContainer
+                                                           toItem:container
                                                         attribute:NSLayoutAttributeCenterX
                                                        multiplier:1.0
                                                          constant:0.0]];
     [constraints addObject:[NSLayoutConstraint constraintWithItem:newView
                                                         attribute:NSLayoutAttributeCenterY
                                                         relatedBy:NSLayoutRelationEqual
-                                                           toItem:_childViewContainer
+                                                           toItem:container
                                                         attribute:NSLayoutAttributeCenterY
                                                        multiplier:1.0
                                                          constant:0.0]];
 
     _contentViewConstraints = constraints;
-    [_childViewContainer addConstraints:_contentViewConstraints];
+    [container addConstraints:_contentViewConstraints];
     [_selectedViewController didMoveToParentViewController:self];
 }
 
