@@ -9,14 +9,14 @@
 
 Pod::Spec.new do |s|
   s.name             = "OZTabBarController"
-  s.version          = "0.2.1"
+  s.version          = "0.2.2"
   s.summary          = "Lightweight tab bar controller geared for maximum customizability."
   s.homepage         = "https://github.com/chakrit/oztabbarcontroller"
   s.license          = 'BSD'
   s.author           = { "Chakrit Wichian" => "service@chakrit.net" }
   s.source           = {
     :git => "https://github.com/chakrit/oztabbarcontroller.git",
-    :tag => "v0.2.1"
+    :tag => "v0.2.2"
   }
 
   s.platform     = :ios, '6.0'
